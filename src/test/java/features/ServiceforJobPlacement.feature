@@ -16,23 +16,23 @@
 #""
 ## (Comments)
 #Sample Feature Definition Template
-
+@Release1.0
 Feature: Service for Job Placement
 AS a Guest User i should able to get registered to submit my information in order to be contacted by Transfotech Academy  .
  
- 
-Scenario: All contact information fields  should be visible to Guest user  on submission form.
+ @Regression @smoke @sanity
+Scenario: Guest user can able to see job placement page
 
     Given Guest user is in homepage
     When  Guest user clicks over on service icon 
     Then job placement icon should be visible to Guest users in services drop down 
     When Guest user clicks on Job Placement
     Then  Job Placement page should be open 
-    When  Guest user click the Apply Now button
-    Then  Guest user should be directed towards submission form page 
-    And   All the contact information fields should be visible to Guest users
-    
-    
+    #When  Guest user click the Apply Now button
+    #Then  Guest user should be directed towards submission form page 
+    #And   All the contact information fields should be visible to Guest users
+    #All contact information fields  should be visible to Guest user  on submission form.
+    #Guest user can able to see job placement page#
     
  #Scenario:   
     #When Guest user click on firstname textbox field box

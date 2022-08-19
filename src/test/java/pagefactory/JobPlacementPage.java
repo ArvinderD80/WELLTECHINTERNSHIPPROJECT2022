@@ -8,7 +8,7 @@ import base.Mainclass;
 
 public class JobPlacementPage extends Mainclass {
 	
-	@FindBy(xpath="//div[@data-elementor-id=\"4059\"]/section[5]/div[4]/div[1]/div[1]/div[3]/div[1]/div[1]/a[1]/span[1]/span[contains(text(),'Apply Now'")
+	@FindBy(xpath="//html[1]/body[1]/div[1]/div[1]/div[1]/section[5]/div[4]/div[1]/div[1]/div[3]/div[1]/div[1]/a[1]/span[1]/span[contains(text(),'Apply Now')]")
 	WebElement ApplyNowtxt;
 	
 	

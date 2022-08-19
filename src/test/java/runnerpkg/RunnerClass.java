@@ -9,7 +9,8 @@ import io.cucumber.junit.CucumberOptions;
 @CucumberOptions(features= "C:\\Users\\Arinder\\eclipse-workspace\\WellTechInternshipProjectBDDPOM\\src\\test\\java\\features\\ServiceforJobPlacement.feature",
                   glue ="step_Definition",
                    monochrome=   true,
-                   plugin= {"pretty","html:target/cucumberReport.html" }
+                   plugin= {"pretty","html:target/cucumberReport.html" },
+                    tags="@Release1.0"
                    )
 public class RunnerClass {
 
