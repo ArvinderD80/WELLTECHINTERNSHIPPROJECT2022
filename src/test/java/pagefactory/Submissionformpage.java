@@ -1,14 +1,16 @@
 package pagefactory;
 
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import base.Mainclass;
 
 public class Submissionformpage extends Mainclass {  
+	Actions action = new Actions (driver) ;
 	
-	@FindBy(css="#first_name")
+	@FindBy(id="first_name")
 	WebElement firsttxtnamefield ;
 	
 	@FindBy(css="#last_name")
@@ -45,7 +47,7 @@ public class Submissionformpage extends Mainclass {
 	@FindBy(xpath="//body/div[@id='__nuxt']/div[1]/div[1]/section[1]/section[1]/section[1]/div[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]")
 	WebElement countrydropdown;
 	
-	@FindBy(xpath="//input[@id='phone']")
+	@FindBy(xpath="//html[1]/body[1]/div[1]/div[1]/div[1]/section[1]/section[1]/section[1]/div[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/input[1]")
 	WebElement cellphonetxtfeild;
 	
 	@FindBy(xpath="//input[@id='Full-Stack QA Engineering_DV6VNzE2nVchvRncPic8_0_h2clucdd6ta']")
@@ -54,10 +56,10 @@ public class Submissionformpage extends Mainclass {
 	@FindBy(xpath="//body/div[@id='__nuxt']/div[1]/div[1]/section[1]/section[1]/section[1]/div[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1]/div[1]/div[1]/div[1]")
 	WebElement unitesstatedropdownele;
 	
-	@FindBy(xpath="//h1[contains(text(),'By registering and entering your email address & p')]")
+	@FindBy(xpath="//html[1]/body[1]/div[1]/div[1]/div[1]/section[1]/section[1]/section[1]/div[1]/div[1]/div[1]/div[8]/div[1]/div[1]/h1[contains(text(),'By registerin')]")
 	WebElement Agreementtxt;
 	
-	@FindBy(xpath="//button[contains(text(),'Submit')]")
+	@FindBy(xpath="//button[contains(text(),'Sub')]")
 	WebElement submitbuttn;
 	
 	
@@ -71,12 +73,21 @@ public class Submissionformpage extends Mainclass {
   public String capturesubmissionPageTitle() {
       return driver.getTitle();
 }
-    
+  public String capturesubmissionPageUrl() {
+      return driver.getCurrentUrl();
+}   
   public void clickingfirsttxtnamefield() {
 	  firsttxtnamefield.click();
 	  } 
- public boolean firsnamefieldtxtisvisible() {
+  public boolean firsnamefieldtxtisvisible() {
 	  return firsttxtnamefield.isDisplayed();
+	  } 
+  public boolean firsnamefieldtxtisclickable(){
+	    return  firsttxtnamefield.isEnabled();
+	}
+ 
+ public String firstnameerrmsg() {
+	return firsttxtnamefield.getText();
 	  } 
   
   public void clickinglasttxtnamefield() {
@@ -85,7 +96,9 @@ public class Submissionformpage extends Mainclass {
   public boolean lastnamefieldtxtisvisible() {
 	  return lasttxtnamefield.isDisplayed();
 	  }
-  
+  public boolean lasttxtnamefieldisclickable(){
+	    return  lasttxtnamefield.isEnabled();
+	}
   
   public void clickingEmailtextfield() {
 	  Emailtextfield.click();
@@ -93,7 +106,9 @@ public class Submissionformpage extends Mainclass {
   public boolean Emailfieldtxtisvisible() {
 	  return Emailtextfield.isDisplayed();
 	  }
-
+  public boolean Emailtextfieldisclickable() {
+		 return  Emailtextfield.isEnabled();
+}  
   
   public void clickingstatetxtfield() {
 	  statetxtfield.click();
@@ -101,16 +116,21 @@ public class Submissionformpage extends Mainclass {
   public boolean statetfieldtxtisvisible(){
 	 return statetxtfield.isDisplayed();
 	}  
-	  
+  public boolean statetxtfieldisclickable() {
+		 return  statetxtfield.isEnabled();
+  }    
 	  
 	   
   public void clickingmessagetxtfield() {
 	  messagetxtfield.click();
  }
-  public boolean messagefieldtxtisvisible(){
+ public boolean messagefieldtxtisvisible(){
 		 return messagetxtfield.isDisplayed();
 		}   
-  
+ public boolean messagetxtfieldisclickable() {
+	 return  messagetxtfield.isEnabled();
+	  } 
+
   
   public void clickingcountrydropdown() {
 	  countrydropdown.click();
@@ -122,14 +142,18 @@ public class Submissionformpage extends Mainclass {
   public void clickingunitesstatedropdownele() {
 	  unitesstatedropdownele.click();
 	  } 
-  
+  public boolean unitesstatedropdowneleisclickable() {
+		 return  unitesstatedropdownele.isEnabled();
+		  } 
   public void clickingcheckboxefeild() {
 	  checkboxefeild.click();
 	  }
   public boolean checkboxsarevisivle() {
 		 return  checkboxefeild.isDisplayed();
 		  } 
-  
+  public boolean checkboxefeildisclickable() {
+		 return  checkboxefeild.isEnabled();
+		  } 
   public void clickingcellphonetxtfeild() {
 	  cellphonetxtfeild.click();
 	  } 
@@ -137,7 +161,9 @@ public class Submissionformpage extends Mainclass {
   public boolean cellphonefeildtxtisvisible(){
 		 return cellphonetxtfeild.isDisplayed();
 		}
-  
+  public boolean cellphonetxtfeildisclickable() {
+		 return  cellphonetxtfeild.isEnabled();
+		  } 
   
   public boolean Agreementtxtisvisible() {
 	  return Agreementtxt.isDisplayed();
@@ -146,7 +172,7 @@ public class Submissionformpage extends Mainclass {
 	  submitbuttn.click();
 	  } 
   public boolean submitbuttnisclickable() {
-	 return  submitbuttn.isSelected();
+	 return  submitbuttn.isEnabled();
 	  } 
 
 }

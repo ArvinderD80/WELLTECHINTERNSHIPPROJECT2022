@@ -24,28 +24,35 @@ Actions action = new Actions (driver) ;
 }
 
 	public void clickingServicetxt() {
-		action.moveToElement(Servicetxt).clickAndHold(Servicetxt);
+	action.moveToElement(Servicetxt).clickAndHold(Servicetxt);
 		
 		
 }
-
-
+	
 public boolean Servicetxtisvisible(){
     return  Servicetxt.isDisplayed();
 }
 
-
+public boolean Servicetxtisclickable(){
+    return  Servicetxt.isEnabled();
+}
 
 public void clickingJobPlacementtxt(){
 action.moveToElement(JobPlacementtxt).click().build().perform();;
 }
 
-public boolean JobPlacementtxtisclickable(){
-	return JobPlacementtxt.isSelected();
+public boolean JobPlacementtxtisvisible(){
+	return JobPlacementtxt.isDisplayed();
 	
 }
-public String CaptureHomepagetitle() {
-         return driver.getTitle();
+
+public boolean JobPlacementtxtisclickable(){
+    return    JobPlacementtxt.isEnabled();
+} 
+
+
+public String CaptureHomepageURL() {
+         return driver.getCurrentUrl();
  }
 	
 

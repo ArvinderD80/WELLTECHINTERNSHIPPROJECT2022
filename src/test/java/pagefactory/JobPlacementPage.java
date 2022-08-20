@@ -1,14 +1,17 @@
 package pagefactory;
 
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import base.Mainclass;
 
 public class JobPlacementPage extends Mainclass {
+	Actions action = new Actions (driver) ;
 	
-	@FindBy(xpath="//html[1]/body[1]/div[1]/div[1]/div[1]/section[5]/div[4]/div[1]/div[1]/div[3]/div[1]/div[1]/a[1]/span[1]/span[contains(text(),'Apply Now')]")
+	
+	@FindBy(partialLinkText="ly")
 	WebElement ApplyNowtxt;
 	
 	
@@ -22,10 +25,11 @@ public void clickingApplyNowtxtlink(){
  }	 
     	 
  public boolean ApplyNowtxtlinkisclickable(){
-	    return     ApplyNowtxt.isSelected();
-}     
-    
- public String captureJobplacementPageTitle() {
-                     return driver.getTitle();
+	    return     ApplyNowtxt.isEnabled();
+} 
+ 
+   
+ public String captureJobplacementPageURL() {
+              return driver.getCurrentUrl();
 }   	  
 }
