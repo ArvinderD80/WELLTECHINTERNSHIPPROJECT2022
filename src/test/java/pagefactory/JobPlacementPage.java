@@ -1,5 +1,6 @@
 package pagefactory;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
@@ -31,5 +32,12 @@ public void clickingApplyNowtxtlink(){
    
  public String captureJobplacementPageURL() {
               return driver.getCurrentUrl();
-}   	  
-}
+}  
+ 
+ 
+    public void scrolldownthepage() {
+	for(int i=1;i<=2;i++) 
+		 action.sendKeys(Keys.PAGE_DOWN).build().perform();
+	 }
+	}
+

@@ -23,22 +23,26 @@ Actions action = new Actions (driver) ;
     PageFactory.initElements(driver, this);
 }
 
-	public void clickingServicetxt() {
-	action.moveToElement(Servicetxt).clickAndHold(Servicetxt);
-		
-		
-}
 	
-public boolean Servicetxtisvisible(){
+	
+		
+		
+
+	
+ public boolean Servicetxtisvisible(){
     return  Servicetxt.isDisplayed();
 }
 
 public boolean Servicetxtisclickable(){
     return  Servicetxt.isEnabled();
 }
+public void clickingServicetxt(){
+action.moveToElement(Servicetxt).click().build().perform();
+}
 
 public void clickingJobPlacementtxt(){
-action.moveToElement(JobPlacementtxt).click().build().perform();;
+
+action.moveToElement(JobPlacementtxt).click().build().perform();
 }
 
 public boolean JobPlacementtxtisvisible(){

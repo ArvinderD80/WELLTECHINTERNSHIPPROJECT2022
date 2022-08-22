@@ -1,5 +1,6 @@
 package pagefactory;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
@@ -10,7 +11,7 @@ import base.Mainclass;
 public class Submissionformpage extends Mainclass {  
 	Actions action = new Actions (driver) ;
 	
-	@FindBy(id="first_name")
+	@FindBy(xpath="//*[@id='first_name']")
 	WebElement firsttxtnamefield ;
 	
 	@FindBy(css="#last_name")
@@ -60,6 +61,7 @@ public class Submissionformpage extends Mainclass {
 	WebElement Agreementtxt;
 	
 	@FindBy(xpath="//button[contains(text(),'Sub')]")
+	public
 	WebElement submitbuttn;
 	
 	
@@ -77,8 +79,36 @@ public class Submissionformpage extends Mainclass {
       return driver.getCurrentUrl();
 }   
   public void clickingfirsttxtnamefield() {
-	  firsttxtnamefield.click();
+action.moveToElement(firsttxtnamefield).click().build().perform();         
 	  } 
+  public void clickinglasttxtnamefield() {
+	           lasttxtnamefield.click();
+	  } 
+  public void clickingstatetxtfield() {
+	            statetxtfield.click();
+  } 
+  public void clickingEmailtextfield() {
+	            Emailtextfield.click();
+	  } 
+  public void clickingmessagetxtfield() {
+	           messagetxtfield.click();
+ }
+  public void clickingcheckboxefeild() {
+	            checkboxefeild.click();
+	  }
+  public void clickingcountrydropdown() {
+	            countrydropdown.click();
+	  } 
+  public void clickingunitesstatedropdownele() {
+	  unitesstatedropdownele.click();
+	  } 
+  public void clickingcellphonetxtfeild() {
+	           cellphonetxtfeild.click();
+	  } 
+  public void clickingsubmitbuttn() {
+	  action.moveToElement(submitbuttn).click().build().perform();   
+	  } 
+  
   public boolean firsnamefieldtxtisvisible() {
 	  return firsttxtnamefield.isDisplayed();
 	  } 
@@ -86,13 +116,26 @@ public class Submissionformpage extends Mainclass {
 	    return  firsttxtnamefield.isEnabled();
 	}
  
- public String firstnameerrmsg() {
-	return firsttxtnamefield.getText();
+ public  String    firstnameerrmsg() {
+	return firstnameerrmsg.getText();
 	  } 
-  
-  public void clickinglasttxtnamefield() {
-	  lasttxtnamefield.click();
-	  } 
+   public  String    lastnameerrmsg() {
+      return lastnameerrmsg.getText();
+ }
+ public  String   Emailerrmsgfield() {
+   return Emailerrmsgfield.getText();
+	 }
+   public String stateerrmsg() {
+		 return stateerrmsg.getText();
+	 }
+   public String checkboxerrmsg() {
+		 return checkboxerrmsg.getText();
+	 }
+   public String invalidcellphoneerrmsg() {
+		 return invalidcellphoneerrmsg.getText();
+	 }
+   
+ 
   public boolean lastnamefieldtxtisvisible() {
 	  return lasttxtnamefield.isDisplayed();
 	  }
@@ -100,9 +143,7 @@ public class Submissionformpage extends Mainclass {
 	    return  lasttxtnamefield.isEnabled();
 	}
   
-  public void clickingEmailtextfield() {
-	  Emailtextfield.click();
-	  } 
+  
   public boolean Emailfieldtxtisvisible() {
 	  return Emailtextfield.isDisplayed();
 	  }
@@ -110,9 +151,7 @@ public class Submissionformpage extends Mainclass {
 		 return  Emailtextfield.isEnabled();
 }  
   
-  public void clickingstatetxtfield() {
-	  statetxtfield.click();
-  } 
+ 
   public boolean statetfieldtxtisvisible(){
 	 return statetxtfield.isDisplayed();
 	}  
@@ -121,9 +160,7 @@ public class Submissionformpage extends Mainclass {
   }    
 	  
 	   
-  public void clickingmessagetxtfield() {
-	  messagetxtfield.click();
- }
+ 
  public boolean messagefieldtxtisvisible(){
 		 return messagetxtfield.isDisplayed();
 		}   
@@ -132,32 +169,23 @@ public class Submissionformpage extends Mainclass {
 	  } 
 
   
-  public void clickingcountrydropdown() {
-	  countrydropdown.click();
-	  } 
+ 
   public boolean countrydropdownisvisivle() {
 		 return  countrydropdown.isDisplayed();
 		  } 
   
-  public void clickingunitesstatedropdownele() {
-	  unitesstatedropdownele.click();
-	  } 
+ 
   public boolean unitesstatedropdowneleisclickable() {
 		 return  unitesstatedropdownele.isEnabled();
 		  } 
-  public void clickingcheckboxefeild() {
-	  checkboxefeild.click();
-	  }
+ 
   public boolean checkboxsarevisivle() {
 		 return  checkboxefeild.isDisplayed();
 		  } 
   public boolean checkboxefeildisclickable() {
 		 return  checkboxefeild.isEnabled();
 		  } 
-  public void clickingcellphonetxtfeild() {
-	  cellphonetxtfeild.click();
-	  } 
-  
+ 
   public boolean cellphonefeildtxtisvisible(){
 		 return cellphonetxtfeild.isDisplayed();
 		}
@@ -168,9 +196,7 @@ public class Submissionformpage extends Mainclass {
   public boolean Agreementtxtisvisible() {
 	  return Agreementtxt.isDisplayed();
 	  } 
-  public void clickingsubmitbuttn() {
-	  submitbuttn.click();
-	  } 
+  
   public boolean submitbuttnisclickable() {
 	 return  submitbuttn.isEnabled();
 	  } 
